@@ -13,17 +13,29 @@ body {
   border: 1px solid black;
   width: 15px;
   height: 15px;
-
   }
 .off {
   background-color: rgb(36, 36, 36);
-  animation-name: death;
-  animation-duration: .2s;
+  -webkit-animation-name: death;
+          animation-name: death;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+@-webkit-keyframes death {
+  from {
+    background-color:  $death-color;
+    -webkit-box-shadow: 0px 0px 20px  $death-color;
+            box-shadow: 0px 0px 20px  $death-color;
+  }
+  to {
+    background-color: rgb(36, 36, 36);
+  }
 }
 @keyframes death {
   from {
     background-color:  $death-color;
-    box-shadow: 0px 0px 20px  $death-color;
+    -webkit-box-shadow: 0px 0px 20px  $death-color;
+            box-shadow: 0px 0px 20px  $death-color;
   }
   to {
     background-color: rgb(36, 36, 36);
@@ -31,13 +43,26 @@ body {
 }
 .on {
   background-color: $life-color;
-  animation-name: birth;
-  animation-duration: .2s;
+  -webkit-animation-name: birth;
+          animation-name: birth;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+@-webkit-keyframes birth {
+  from {
+    background-color: $birth-color;
+    -webkit-box-shadow: 0px 0px 20px $birth-color;
+            box-shadow: 0px 0px 20px $birth-color;
+  }
+  to {
+    background-color: $life-color;
+  }
 }
 @keyframes birth {
   from {
     background-color: $birth-color;
-    box-shadow: 0px 0px 20px $birth-color;
+    -webkit-box-shadow: 0px 0px 20px $birth-color;
+            box-shadow: 0px 0px 20px $birth-color;
   }
   to {
     background-color: $life-color;
@@ -48,15 +73,20 @@ body {
 }
 .center {
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 10px;
 }
 .grid {
   width: 150px;
   line-height: 0;
   margin: auto;
-  box-shadow: 0px 0px 25px 7px $secondary-color;
+  -webkit-box-shadow: 0px 0px 25px 7px $secondary-color;
+          box-shadow: 0px 0px 25px 7px $secondary-color;
   margin-top: 20px;
 }
 h1, h3 {
@@ -67,7 +97,8 @@ h2, h4 {
   @extend %shared-fonts;
 }
 .btn, .dropbtn {
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   font-family: Arial, Helvetica, sans-serif;
   background-color: $birth-color;
   color: black;
@@ -91,7 +122,8 @@ h2, h4 {
   background-color: #f1f1f1;
   min-width: 70px;
   overflow: hidden;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 .dropdown-content a, .dropdown-content ul{
@@ -128,7 +160,8 @@ h2, h4 {
   padding: 0;
   border: 1px solid #888;
   width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
